@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Egor
+      changes:
+        - createTable:
+            tableName: status
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+
+  - changeSet:
+      id: 2
+      author: Egor
+      changes:
+        - insert:
+            tableName: status
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: 'PENDING'
+
+  - changeSet:
+      id: 3
+      author: Egor
+      changes:
+        - insert:
+            tableName: status
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: 'IN_PROGRESS'
+
+  - changeSet:
+      id: 4
+      author: Egor
+      changes:
+        - insert:
+            tableName: status
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: 'COMPLETED'
